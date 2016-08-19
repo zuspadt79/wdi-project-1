@@ -1,3 +1,71 @@
-body {
-  background-color: green;
+* {
+  box-sizing: border-box;
 }
+
+#container {
+  margin: 10px;
+  background-color: white;
+  height: 600px;
+  width: 600px;
+}
+
+.unit {
+  background-color: black;
+  height: 60px;
+  width: 60px;
+  margin: 1px;
+  float: left;
+}
+
+.box {
+  float: left;
+  position: relative;
+  width: 60px;
+  height: 60px;
+}
+
+.top {
+  position: absolute;
+  top: 0;
+  height: 5px;
+  right: -5px;
+  left: 0;
+  width: 60px;
+  border: 1px solid black;
+}
+
+
+.left {
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: -5px;
+  width: 5px;
+  height: 60px;
+  border: 1px solid black;
+}
+
+.right {
+  position: absolute;
+  right: 0;
+  top: 0;
+  bottom: -5px;
+  width: 5px;
+  height: 60px;
+  border: 1px solid black;
+}
+
+.bottom {
+  position: absolute;
+  bottom: 0;
+  width: 60px;
+  height: 5px;
+  left: 0;
+  right: -5px;
+  border: 1px solid black;
+}
+
+.red { background-color: red; }
+.blue { background-color: blue; }
+
+
