@@ -68,7 +68,10 @@ total of 220 lines (110 h, 110 v)
 110 h divs = Print 10 divs in a line, once you reach miltipuls of 10, you set the position of the div row to the next line.
 
 
+- AI
 
+After click, AI chooses a random div
+Every time a square is completed, the scoreboard adds one to the relevent player.
 
 
 

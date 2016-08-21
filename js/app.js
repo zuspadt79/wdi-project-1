@@ -1,6 +1,3 @@
-console.log("fuuuu...");
-
-window.addEventListener("DOMContentLoaded", function(){
 
   var squareCombinations =  [ [0, 10, 11, 21], [1, 12, 22, 11], [2, 13, 23, 12], [3, 14, 24, 13], 
                               [4, 15, 25, 14], [5, 16, 26, 15], [6, 17, 27, 16], [7, 18, 28, 17], 
@@ -29,14 +26,18 @@ window.addEventListener("DOMContentLoaded", function(){
                               [195, 206, 216, 205], [196, 207, 217, 206], [197, 208, 218, 207], [198, 209, 219, 208]
                               ];
 
-  var clickedDiv = [];
-  var completeSquares = [];
 
-  var changeBackground = function(){
-    $('body').css({'background': 'green'})
-  };
+window.addEventListener("DOMContentLoaded", function(){
 
-  // Setting up square combinations (don't do this, it's silly)
+                                var clickedDiv = [];
+                                var completeSquares = [];
+                                var countClick = 0;
+
+                                function changeBackground(){
+                                  $('body').css({'background': 'green'})
+                                };
+
+// Setting up square combinations (don't do this, it's silly)
 //     for(i = 0; i < 199; i++){
 
 //       x = 0;
@@ -75,13 +76,32 @@ console.log(squareCombinations);
   // making lines clickable
   $('.lines').click(function(){
     $(this).css('background', 'black');
+    $(this).addClass('clicked');
         // storing value as an integer to the array
         var valueString = $(this).attr('value');
         clickedDiv.push(parseInt(valueString, 10));
         findMatch();
-
-        // console.log(clickedDiv);
       });
+
+
+
+
+// setting up the background squares
+
+  for (var s = 0; s < 10; s++){ 
+    for (var i = 0; i < 10; i++){
+      $('#behind').append('<div class="square"></div>');
+    }
+  
+    if(s === 10){
+      break;
+    }  
+  }
+  // assign a value to each child square
+  $('#behind').children().each(function(index){
+    var value = (index + $(this).text() );
+    $(this).attr('value', value);
+  });
 
 
   //check if arrays match
@@ -107,29 +127,47 @@ console.log(squareCombinations);
   //     return ret;
   // };
 
- function findMatch(){
-     for (var i = 0; i < squareCombinations.length; i++) {
-       for (var j = 0; j < squareCombinations[i].length; j++) {
-         var counter = 0;
-         for(var k = 0; k < clickedDiv.length; k++) {
-           if (clickedDiv.indexOf(squareCombinations[i][j]) >= 0) {
-             counter++;
-             if(counter> 3) changeBackground();
-             
-            
+  // var findMatch = function (){
+  //  var countMatching = 0;
+  //  console.log(countMatching);
+  //  for(i=0; i<squareCombinations.length; i++){
+  //    for(j=0; j<squareCombinations[i].length; j++){
+
+  //      var divValue = squareCombinations[i][j];
+
+  //      if( $('#container').find("[value='" + divValue + "']").hasClass('clicked')){
+  //        console.log(countMatching);
+  //        countMatching ++;
+  //        console.log(countMatching);
+  //        if(countMatching > 3){
+  //          alert('found square');
+  //          countMatching = 0;      
+  //        }
+  //      }
+  //    }
+  //  }
+  // };
+
+
+  function findMatch(){
+   for (var i = 0; i < squareCombinations.length; i++) {
+     for (var j = 0; j < squareCombinations[i].length; j++) {
+       var counter = 0;
+       for(var k = 0; k < clickedDiv.length; k++) {
+         if (clickedDiv.indexOf(squareCombinations[i][j]) >= 0) {
+           counter++;
+           if(counter> 3); 
            
-           }
-         }
-       }
-     }
+          }
+        }
+      }
+    }
+  };
 
-   };
-
-
-//completeSquares.push(indexOf(squareCombinations[i]));
-
-// once we find a match in squareCombinations, push that nested array to completeSquares
-
+// match any combination of clickedDiv integers with a specific nested array in squareCombinations and push
+// the matched nested array to completeSquares array.
+// Any shared intergers must be available for comparison.
+// possibly give divs a class of clicked? 
 
 
 

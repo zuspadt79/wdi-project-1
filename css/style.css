@@ -1,30 +1,43 @@
 body{
-  background-color: grey;
+  background-color: #9DE1F9;
 }
 
 h1{
-  font-family: 'Helvetica', sans-serif;
-  font-size: 42px;
+  font-family: 'Josefin Sans', sans-serif;
+  font-size: 52px;
+  font-weight: 700;
+  color: #20323D;
   text-align: center;
+
 }
 
 h6{
-  font-family: 'Helvetica', sans-serif;
-  font-size: 10px;
+  font-family: 'Josefin Sans', sans-serif;
+  font-size: 8px;
+  color: #20323D;
   text-align: center;
 }
 
 footer{
   font-size: 8px;
+  font-family: 'Josefin Sans', sans-serif;
   text-align: center;
   padding: 0 0 20px 0;
+  color: #20323D;
 }
 
+/*#bigdiv{
+  width: 610px;
+  height: 610px;
+}
+*/
+/*making the grid*/
 #container{
-    width: 500px;
-    height:610px;
-    margin: 0 auto;
-    position: relative;
+  width: 500px;
+  height:610px;
+  margin: 0 auto;
+  position: relative;
+
 }
 
 #container div:nth-child(21n){
@@ -32,39 +45,64 @@ footer{
 }
 
 .dot{
-    height: 8px;
-    width: 8px;
-    background-color: white;
-    border-radius: 8px;
-    position: absolute;
+  height: 8px;
+  width: 8px;
+  background-color: white;
+  border-radius: 8px;
+  position: absolute;
 }
 
 .lines{
-    border-radius: 10px;
-    display: inline-block;
-    background-color: rgba(255,255,255,0.2);
-    /*position: absolute;*/
+  border-radius: 10px;
+  display: inline-block;
+  background-color: rgba(255,255,255,0.3);
+  /*position: absolute;*/
 }
 
 .vertical{
-    width: 10px;
-    height: 60px;
-    margin-top: -14px;
-    margin-right: 50px;
-    margin-left: -10px;
-    margin-bottom: -18px;
+  width: 10px;
+  height: 60px;
+  margin-top: -14px;
+  margin-right: 50px;
+  margin-left: -10px;
+  margin-bottom: -18px;
 }
 
 .horizontal{
-    width: 60px;
-    height: 10px;
-    margin-left: -10px;   
+  width: 60px;
+  height: 10px;
+  margin-left: -10px;   
 }
 
 
 .vertical:hover{
-  background-color: black;
+  background-color: #20323D;
 }
 .horizontal:hover{
-  background-color: black;
+  background-color: #20323D;
 }
+
+/* making the background squares*/
+
+/*#behind{
+  width: 500px;
+  height: 500px;
+  margin: 0 auto;
+  background-color: orange;
+  display: inline-block;
+
+}
+
+#behind div:nth-child(21n){
+  margin-right: 0;
+}
+
+.square{
+  height: 55px;
+  width: 55px;
+  position: absolute;
+  background-color: blue;
+  display: inline-block;
+
+}
+*/
