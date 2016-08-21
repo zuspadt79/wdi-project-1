@@ -1,71 +1,70 @@
-* {
-  box-sizing: border-box;
+body{
+  background-color: grey;
 }
 
-#container {
-  margin: 10px;
-  background-color: white;
-  height: 600px;
-  width: 600px;
+h1{
+  font-family: 'Helvetica', sans-serif;
+  font-size: 42px;
+  text-align: center;
 }
 
-.unit {
+h6{
+  font-family: 'Helvetica', sans-serif;
+  font-size: 10px;
+  text-align: center;
+}
+
+footer{
+  font-size: 8px;
+  text-align: center;
+  padding: 0 0 20px 0;
+}
+
+#container{
+    width: 500px;
+    height:610px;
+    margin: 0 auto;
+    position: relative;
+}
+
+#container div:nth-child(21n){
+  margin-right: 0;
+}
+
+.dot{
+    height: 8px;
+    width: 8px;
+    background-color: white;
+    border-radius: 8px;
+    position: absolute;
+}
+
+.lines{
+    border-radius: 10px;
+    display: inline-block;
+    background-color: rgba(255,255,255,0.2);
+    /*position: absolute;*/
+}
+
+.vertical{
+    width: 10px;
+    height: 60px;
+    margin-top: -14px;
+    margin-right: 50px;
+    margin-left: -10px;
+    margin-bottom: -18px;
+}
+
+.horizontal{
+    width: 60px;
+    height: 10px;
+    margin-left: -10px;   
+}
+
+
+.vertical:hover{
   background-color: black;
-  height: 60px;
-  width: 60px;
-  margin: 1px;
-  float: left;
 }
-
-.box {
-  float: left;
-  position: relative;
-  width: 60px;
-  height: 60px;
+.horizontal:hover{
+  background-color: black;
 }
-
-.top {
-  position: absolute;
-  top: 0;
-  height: 5px;
-  right: -5px;
-  left: 0;
-  width: 60px;
-  border: 1px solid black;
-}
-
-
-.left {
-  position: absolute;
-  left: 0;
-  top: 0;
-  bottom: -5px;
-  width: 5px;
-  height: 60px;
-  border: 1px solid black;
-}
-
-.right {
-  position: absolute;
-  right: 0;
-  top: 0;
-  bottom: -5px;
-  width: 5px;
-  height: 60px;
-  border: 1px solid black;
-}
-
-.bottom {
-  position: absolute;
-  bottom: 0;
-  width: 60px;
-  height: 5px;
-  left: 0;
-  right: -5px;
-  border: 1px solid black;
-}
-
-.red { background-color: red; }
-.blue { background-color: blue; }
-
-

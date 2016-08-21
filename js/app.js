@@ -1,50 +1,74 @@
+console.log("fuuuu...");
+
 window.addEventListener("DOMContentLoaded", function(){
 
- $(document).ready(function() {
-  var width  = 10;  
+    var clickedDiv = [];
+    var squareCombinations = [];
+    var tempArray = [];
 
-  for(var x = 0; x < 10; x++) {
-   for(var y = 0; y < 10; y++) {
-     var $unit = $("<div class='box'>" +
-      "<div class='top'></div>" +
-      "<div class='right'></div>" +
-      "<div class='bottom'></div>" +
-      "<div class='left'></div>" +
-      "</div>");
-     $unit.appendTo('#container');
-   }
+  // Setting up square combinations (don't do this, it's silly)
+    for(i = 0; i < 199; i++){
+
+      x = 0;
+      x = x + i;
+      y = x + 11;
+      z = x + 21;
+      w = x + 10;
+
+      tempArray = [w,x,y,z];
+      squareCombinations.push(tempArray);
+console.log(squareCombinations[i]);
+    }
+
+  // setting up grid
+  for (var n = 0; n < 11; n++){ 
+    for (var i = 0; i < 10; i++){
+      $('#container').append('<div class="lines horizontal"></div>');
+    }
+
+    if(n === 10){
+      break;
+    }  
+
+    for (var i = 0; i < 11; i++){
+      $('#container').append('<div class="lines vertical"></div>');
+    }
   }
 
-   var $boxes = $(".box");
+  // assigning a value to each child
+  $('#container').children().each(function(index){
+          var value = (index + $(this).text() );
+          $(this).attr('value', value);
 
-   for (var i = 0; i < $boxes.length; i++) {
-    if (i < width) {
-      $($boxes[i]).find(".top").css("background", "black");
-    }
-    
-    if ((i+1) % width === 0) {
-      $($boxes[i]).find(".right").css("background", "black");
-    }
+      });
+ 
+  // making lines clickable
+  $('.lines').click(function(){
+        $(this).css('background', 'black');
+        // storing value as an integer to the array
+        var valueString = $(this).attr('value');
+        clickedDiv.push(parseInt(valueString, 10));
 
-    if (i % width === 0) {
-      $($boxes[i]).find(".left").css("background", "black");
-    }
+console.log(clickedDiv);
+      });
 
-    if (i > ((width*width)-(width+1))) {
-      $($boxes[i]).find(".bottom").css("background", "black");
-    }
-   }
 
-   $('.box div').on('click', function() {
-      $(this).css("background", "black");
-    });
- })
+  //check if arrays match
+  for (var i = 0; i < clickedDiv.length; i++) {
+    if($(clickedDiv).not(squareCombinations).length === 0 && $(squareCombinations).not(clickedDiv).length === 0){
+      console.log('fart');
+    }
+  } 
+ 
+
+  
+
+
+
+
 
 
 
 
 
 }); //end
-
-
-
