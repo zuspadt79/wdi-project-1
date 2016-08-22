@@ -71,6 +71,7 @@ window.addEventListener("DOMContentLoaded", function(){
 
     var clicked = $(".clicked");
 
+    // Not sure?
     if (counter  % 2 === 0) {
       $(this).addClass('playerOne')
     } else {
@@ -84,11 +85,16 @@ window.addEventListener("DOMContentLoaded", function(){
     clickedLines = [].slice.call(clickedLines)
 
     $.each(squareCombinations, function(i, winArray){
-      var counter = 0;
+      var winCounter = 0;
       $.each(winArray, function(j, value){
         if (!!~clickedLines.indexOf(value)) {
-          counter++;
-          if (counter === 4) {
+          winCounter++;
+          if (winCounter === 4) {
+            if (counter % 2 === 0) {
+              $("div[data-value='" + winArray[1] + "']").addClass("playerOne-won");
+            } else {
+              $("div[data-value='" + winArray[1] + "']").addClass("playerTwo-won");
+            }
             squareCombinations[i] = [null, null, null, null];
             return console.log("Box Checked");
           }

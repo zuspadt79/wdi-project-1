@@ -134,3 +134,25 @@ footer{
 
   .playerOne { background-color: #20323D; }
   .playerTwo { background-color: green; }
+
+  .playerOne-won::after {
+    content: " ";
+    background: #20323D;
+    height: 30px;
+    width: 30px;
+    display: block;
+    left: 15px;
+    top: 14px;
+    position: relative;
+  }
+
+  .playerTwo-won::after {
+    content: " ";
+    background: green;
+    height: 30px;
+    width: 30px;
+    display: block;
+    left: 15px;
+    top: 14px;
+    position: relative;
+  }
