@@ -32,7 +32,8 @@ window.addEventListener("DOMContentLoaded", function(){
 
   function buildSquareCombinations(){
     var combinations = [];
-    for (var i = 0; i < 198; i++) {
+    for (var i = 0; i < 199
+      ; i++) {
       combinations.push([i, i+10, i+11, i+21])
     }
     return combinations;
@@ -42,7 +43,8 @@ window.addEventListener("DOMContentLoaded", function(){
   var completeSquares  = []; // push commpleted values here?
   var playerOneSquares = [];
   var playerTwoSquares = [];
-  var spliceArray      = []
+  var spliceArray      = [];
+
 
   for (var n = 0; n < 11; n++){ 
     for (var i = 0; i < 10; i++){
@@ -81,6 +83,7 @@ window.addEventListener("DOMContentLoaded", function(){
     var clickedLines = clicked.map(function(i, clickedDiv){
       return $(clickedDiv).data("value");
     });
+    console.log(clickedLines);
 
     clickedLines = [].slice.call(clickedLines)
 
@@ -92,17 +95,49 @@ window.addEventListener("DOMContentLoaded", function(){
           if (winCounter === 4) {
             if (counter % 2 === 0) {
               $("div[data-value='" + winArray[1] + "']").addClass("playerOne-won");
+              counter++;
             } else {
               $("div[data-value='" + winArray[1] + "']").addClass("playerTwo-won");
+              counter++;
             }
+            console.log(squareCombinations);
             squareCombinations[i] = [null, null, null, null];
             return console.log("Box Checked");
           }
         }
       }); 
     });
- 
     counter++;
+
   });
+
+  // if (playerOneSquares && playerTwoSquares === 100){
+  //   alert("draw");
+  // } else if (playerOneSquares > playerTwoSquares) {
+  //   alert('p1 wins');
+  // } else {
+  //   alert('p2 wins');
+  // };
+
+// // //MODAL BOX
+
+//   var modal = document.getElementById('myModal');
+
+//   var btn = document.getElementById("myBtn");
+
+//   var span = document.getElementsByClassName("close")[0];
+
+//   // When the user clicks on the button, open the modal 
+//   btn.onclick = function() {
+//       modal.style.display = "block";
+//   }
+//   span.onclick = function() {
+//       modal.style.display = "none";
+//   }
+//   window.onclick = function(event) {
+//       if (event.target == modal) {
+//           modal.style.display = "none";
+//       }
+//   }
 
 });
