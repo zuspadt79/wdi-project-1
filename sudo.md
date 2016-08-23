@@ -1,3 +1,9 @@
+ToDo
+fix it
+make a win function (player 1 > player 2 = p1 wins) or something.
+
+
+
 
 CODE
 
