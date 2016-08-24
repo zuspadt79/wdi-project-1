@@ -4,6 +4,8 @@ body{
 }
 
 main{
+  width: 1000px;
+  margin: 0 auto;
   position: relative;
 }
 
@@ -26,6 +28,7 @@ h3{
 }
 
 footer{
+  clear: both;
   font-size: 8px;
   margin-right: 13px;
   font-family: 'Josefin Sans', sans-serif;
